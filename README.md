@@ -1,3 +1,6 @@
+# 个税计算器
+> 使用mpvue框架，计算个税的小程序
+
 # calc
 
 > calc money enjoy money enjoy calc
