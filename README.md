@@ -26,3 +26,6 @@ npm run build --report
 
 For detailed explanation on how things work, checkout the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 # mpvue-calc
+
+# 其他个人作品参考
+![效果展示](https://github.com/xuleileo/mpvue-calc/blob/master/static/assets/dongbeishiyou.jpg)
