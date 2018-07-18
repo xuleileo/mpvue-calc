@@ -1,7 +1,8 @@
 <template>
   <div class="bg">
-    <p class="title1">计算结果</p>
-    <p class="title2">多赚了{{result}}元</p>
+    <p class="title1">个税从3500元调整到5000元起征</p>
+    <p class="title2">我竟然多赚了{{result}}元</p>
+    <p class="title3">{{msg}}</p>
     <div class="calc">
       <div class="item">
         <i class="item_left">税改前需纳税</i>
@@ -31,6 +32,7 @@ export default {
       result:"",
       money_before:"",
       money_after:"",
+      msg : "哈哈羡慕不羡慕",
     }
   },
   methods: {
@@ -46,43 +48,110 @@ export default {
       // 税改前需纳税计算
       if(money_before <=0){
         this.money_before = 0;
-      }else if(money_before >0 && money_before<=1455){
-        this.money_before = (money_before*0.03);
-      }else if(money_before>1455 && money_before <=4155){
-        this.money_before = (money_before*0.1)-105;
-      }else if(money_before>4155 && money_before <=7755){
-        this.money_before = (money_before*0.2)-555;
-      }else if(money_before>7755 && money_before <= 27255){
-        this.money_before = (money_before*0.25)-1005;
-      }else if(money_before>27255 && money_before <= 41255){
-        this.money_before = (money_before*0.3)-2755;
-      }else if(money_before>41255 && money_before <= 57505){
-        this.money_before = (money_before*0.35)-5505;
-      }else if(money_before>57505){
-        this.money_before = (money_before*0.45)-13505;
+      }else if(money_before >0 && money_before<=1500){
+        this.money_before = parseInt(money_before*0.03);
+      }else if(money_before>1500 && money_before <=4500){
+        this.money_before = parseInt(money_before*0.1)-105;
+      }else if(money_before>4500 && money_before <=9000){
+        this.money_before = parseInt(money_before*0.2)-555;
+      }else if(money_before>9000 && money_before <= 35000){
+        this.money_before = parseInt(money_before*0.25)-1005;
+      }else if(money_before>35000 && money_before <= 55000){
+        this.money_before = parseInt(money_before*0.3)-2755;
+      }else if(money_before>55000 && money_before <= 80000){
+        this.money_before = parseInt(money_before*0.35)-5505;
+      }else if(money_before>80000){
+        this.money_before = parseInt(money_before*0.45)-13505;
       }
 
       // 税改后需纳税计算
       if(money_after<=0){
         this.money_after = 0;
       }else if(money_after > 0 && money_after <=1500){
-        this.money_after = money_after * 0.03;
+        this.money_after = parseInt(money_after * 0.03);
       }else if(money_after > 1500 && money_after <=4500){
-        this.money_after = money_after * 0.1 - 105;
+        this.money_after = parseInt(money_after * 0.1) - 105;
       }else if(money_after > 4500 && money_after <=9000){
-        this.money_after = money_after * 0.2 - 555;
+        this.money_after = parseInt(money_after * 0.2) - 555;
       }else if(money_after > 9000 && money_after <=35000){
-        this.money_after = money_after * 0.25 - 1005;
+        this.money_after = parseInt(money_after * 0.25) - 1005;
       }else if(money_after > 35000 && money_after <=55000){
-        this.money_after = money_after * 0.3 - 2755;
+        this.money_after = parseInt(money_after * 0.3) - 2755;
       }else if(money_after > 55000 && money_after <=80000){
-        this.money_after = money_after * 0.35 - 5505;
+        this.money_after = parseInt(money_after * 0.35) - 5505;
       }else if(money_after > 80000){
-        this.money_after = money_after * 0.45 - 13505;
+        this.money_after = parseInt(money_after * 0.45) - 13505;
       }
 
-      this.result = this.money_before - this.money_after;
-      
+      this.result = parseInt(this.money_before - this.money_after);
+      let num = parseInt(Math.random()*10);
+      if(this.result <=0){
+        switch(num){
+          case 0:
+            this.msg ="羡慕吧，来咬我呀！";
+          break;
+          case 1:
+            this.msg ="纳尼？个税是什么？能吃吗？";
+          break;
+          case 2:
+            this.msg ="纳税是不可能的，这辈子都不可能";
+          break;
+          case 3:
+            this.msg ="有这么好的老板，我怎么可能纳税";
+          break;
+          case 4:
+            this.msg ="老板，请问您想说点什么";
+          break;
+          case 5:
+            this.msg ="老板!我要纳税！我要纳税！我要纳税！";
+          break;
+          case 6:
+            this.msg ="请问此时我的心里阴影面积是多少";
+          break;
+          case 7:
+            this.msg ="这么大的秘密，千万不要告诉任何人";
+          break;
+          case 8:
+            this.msg ="吐血，调不调整我都不用纳税";
+          break;
+          case 9:
+            this.msg ="我什么时候能纳税呀~";
+          break;
+        }
+      }else if(this.result > 0){
+        switch(num){
+          case 0:
+            this.msg ="山不厌高，海不厌深";
+          break;
+          case 1:
+            this.msg ="这点钱！也就够我一顿早饭钱！";
+          break;
+          case 2:
+            this.msg ="每顿泡面都可以加个蛋了！";
+          break;
+          case 3:
+            this.msg ="还有比我少的吗？来比比呀！";
+          break;
+          case 4:
+            this.msg ="还有比我多的吗？来比比呀！";
+          break;
+          case 5:
+            this.msg ="老板!我要多纳税！";
+          break;
+          case 6:
+            this.msg ="钱是什么，我会在乎吗";
+          break;
+          case 7:
+            this.msg ="这么大的秘密，千万不要告诉别人";
+          break;
+          case 8:
+            this.msg ="这是哪里，我走丢了，这是什么钱";
+          break;
+          case 9:
+            this.msg ="曾经有一份纳税0元的工作我没有珍惜~";
+          break;
+      }
+    }
 
 
 
@@ -123,8 +192,11 @@ export default {
 .title2{
   margin-top: 3vh;
 }
+.title3{
+  margin-top: 3vh;
+}
 .calc{
-  margin-top: 10vh;
+  margin-top: 5vh;
 }
 .item{
   width: 100vw;
