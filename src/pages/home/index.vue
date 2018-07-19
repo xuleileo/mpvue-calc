@@ -78,19 +78,20 @@ export default {
 }
 .item{
   width: 100vw;
-  height: 50px;
+  height: 100rpx;
   background: #fff;
 }
 .item_left{
   float: left;
   margin-left: 3vw;
-  margin-top: 13px;
+  margin-top: 22rpx;
   font-size: 16px;
 }
 .money{
+  width: 50vw;
   float: right;
   margin-right: 3vw;
-  margin-top: 13px;
+  margin-top: 23rpx;
   font-size: 16px;
   background: #fff;
   text-align: right;
