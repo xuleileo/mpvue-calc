@@ -29,4 +29,3 @@ For detailed explanation on how things work, checkout the [guide](http://vuejs-t
 
 # 其他个人作品参考
 ![效果展示](https://github.com/xuleileo/mpvue-calc/blob/master/static/assets/dongbeishiyou.jpg)
-![效果展示](https://github.com/xuleileo/mpvue-calc/blob/master/static/assets/xihongshishoufu.jpg)
