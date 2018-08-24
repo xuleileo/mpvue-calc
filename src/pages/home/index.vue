@@ -8,7 +8,18 @@
         <i class="item_left">税前金额</i>
         <input type="tel" class="money" placeholder="请输入税前金额" v-model="money">
       </div>
+      <div class="item">
+        <i class="item_left">五险一金</i>
+        <input type="tel" class="money" placeholder="请输入五险一金金额" v-model="money2">
+      </div>
       <button type="submit" class="button_calc" @click="btn_calc">计算</button>
+      <div class="item bonus" @click="btn_bonus">
+        <i class="item_left" >年终奖计算</i>
+      </div>
+      <div class="item bonus" @click="btn_info">
+        <i class="item_left" >个税介绍</i>
+      </div>
+      <ad unit-id="adunit-f5c8584430a94aa2"></ad>
     </div>
 
   </div>
@@ -22,9 +33,18 @@ export default {
     return {
       userInfo:"",
       money:"",
+      money2:""
     }
   },
   methods: {
+    btn_info(){
+      const url = '../home_info/main';
+      wx.navigateTo({ url })
+    },
+    btn_bonus(){
+      const url = '../home_bonus/main';
+      wx.navigateTo({ url })
+    },
     btn_calc(){
       if(this.money <= 0){
         wx.showModal({
@@ -33,7 +53,7 @@ export default {
           duration: 10000
         })
       }else{
-        const url = '../home_result/main?money='+this.money;
+        const url = '../home_result/main?money='+(this.money-this.money2);
         wx.navigateTo({ url })
       }
     },
@@ -54,13 +74,23 @@ export default {
   },
 
   created () {
+    
+      // wx.navigateToMiniProgram({
+      //   appId: "wx04de860284c78cd9",
+      //   path: '/pages/home/main'
+      //   }
+      // )
     // 调用应用实例的方法获取全局数据
-    this.getUserInfo()
+    // this.getUserInfo()
   }
 }
 </script>
 
 <style scoped>
+ad{
+  position: fixed;
+  bottom: 0px;;
+}
 .bg{
   text-align: center;
   width: 100vw;
@@ -91,10 +121,13 @@ export default {
   width: 50vw;
   float: right;
   margin-right: 3vw;
-  margin-top: 23rpx;
+  margin-top: 24rpx;
   font-size: 16px;
   background: #fff;
   text-align: right;
+}
+.bonus{
+  margin-top: 20rpx;;
 }
 .button_calc{
   width: 60%;

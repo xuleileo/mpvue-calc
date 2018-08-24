@@ -5,18 +5,32 @@
     <p class="title3">{{msg}}</p>
     <div class="calc">
       <div class="item">
+        <i class="item_left">税改前实发工资</i>
+        <i class="item_right">{{money_before_money}}元</i>
+      </div>
+      <div class="item">
         <i class="item_left">税改前需纳税</i>
         <i class="item_right">{{money_before}}元</i>
+      </div>
+      <div class="item">
+        <i class="item_left">税改后实发工资</i>
+        <i class="item_right">{{money_after_money}}元</i>
       </div>
       <div class="item">
         <i class="item_left">税改后需纳税</i>
         <i class="item_right">{{money_after}}元</i>
       </div>
+      
       <div class="item">
         <i class="item_left">总计多赚</i>
         <i class="item_right">{{result}}元</i>
       </div>
+      <div class="item">
+        <i class="item_left">增加霸气值</i>
+        <input type="tel" class="money_input" v-model="msg">
+      </div>
       <button class="button_share" @click="btn_share" open-type="share">炫耀给好友</button>
+      <ad unit-id="adunit-b2a012ab5ff4c408"></ad>
     </div>
     
 
@@ -32,6 +46,8 @@ export default {
       result:"",
       money_before:"",
       money_after:"",
+      money_before_money:"",
+      money_after_money:"",
       msg : "哈哈羡慕不羡慕",
     }
   },
@@ -63,6 +79,7 @@ export default {
       }else if(money_before>80000){
         this.money_before = parseInt(money_before*0.45)-13505;
       }
+      this.money_before_money = money-this.money_before;
 
       // 税改后需纳税计算
       if(money_after<=0){
@@ -82,6 +99,8 @@ export default {
       }else if(money_after > 80000){
         this.money_after = parseInt(money_after * 0.45) - 13505;
       }
+
+      this.money_after_money = money - this.money_after;
 
       this.result = parseInt(this.money_before - this.money_after);
       let num = parseInt(Math.random()*10);
@@ -231,5 +250,14 @@ export default {
   height: 45px;
   color: #fff;
   background: #62b900;
+}
+.money_input{
+  width: 60vw;
+  float: right;
+  margin-right: 3vw;
+  margin-top: 23rpx;
+  font-size: 16px;
+  background: #fff;
+  text-align: right;
 }
 </style>

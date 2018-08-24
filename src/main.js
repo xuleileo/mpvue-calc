@@ -14,11 +14,14 @@ export default {
     pages: [
       'pages/logs/main', 
       '^pages/home/main',
+      'pages/home_info/main',
+      'pages/home_info_geshui/main',
+      'pages/home_bonus/main',
       'pages/home_result/main'],
     window: {
       backgroundTextStyle: 'light',
       navigationBarBackgroundColor: '#fff',
-      navigationBarTitleText: '小雷计算器',
+      navigationBarTitleText: '个税计算器新版',
       navigationBarTextStyle: 'black'
     }
   }
