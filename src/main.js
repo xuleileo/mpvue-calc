@@ -16,6 +16,9 @@ export default {
       '^pages/home/main',
       'pages/home_info/main',
       'pages/home_info_geshui/main',
+      'pages/home_info_fenlei/main',
+      'pages/home_info_shuilvbiao/main',
+      'pages/home_info_shuilvbiao_gongzi/main',
       'pages/home_bonus/main',
       'pages/home_result/main'],
     window: {

@@ -1,19 +1,12 @@
 <template>
   <div class="bg">
-    <div class="title">个税介绍</div>
+    <div class="title">个税税率表</div>
     <div class="calc">
-      <div class="item" @click="btn_geshui">
-        <i class="item_left">个税税法</i>
+      <div class="item" @click="btn_gongzi">
+        <i class="item_left">工资、薪金所得</i>
         <i class="item_right"><img class="array" src="../../../static/assets/arrayRight.png" alt=""></i>
       </div>
-      <div class="item top" @click="btn_fenlei">
-        <i class="item_left">个税分类</i>
-        <i class="item_right"><img class="array" src="../../../static/assets/arrayRight.png" alt=""></i>
-      </div>
-      <div class="item top" @click="btn_shuilvbiao">
-        <i class="item_left">个税税率表</i>
-        <i class="item_right"><img class="array" src="../../../static/assets/arrayRight.png" alt=""></i>
-      </div>
+      
       <button class="button_share" @click="btn_share" open-type="share">考考好友</button>
     </div>
     
@@ -32,6 +25,10 @@ export default {
     }
   },
   methods: {
+    btn_gongzi(){
+      const url = '../home_info_shuilvbiao_gongzi/main';
+      wx.navigateTo({ url })
+    },
     btn_shuilvbiao(){
       const url = '../home_info_shuilvbiao/main';
       wx.navigateTo({ url })

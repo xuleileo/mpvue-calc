@@ -89,6 +89,7 @@
       <i>
         <span class="top">第十五条</span>　本法自公布之日起施行。
       </i>
+      <button class="button_share" @click="btn_share" open-type="share">这么无聊的东西，就不要分享了！</button>
       <ad unit-id="adunit-dc61e6acae19ed61"></ad>
   </div>
 
@@ -111,6 +112,16 @@ export default {
   },
   created () {
   },
+  onShareAppMessage: function (res) {
+    if (res.from === 'button') {
+      // 来自页面内转发按钮
+      console.log(res.target)
+    }
+    return {
+      title: '请不要点，真的无聊！',
+      path: '/pages/home/main'
+    }
+  }
 
 }
 </script>
@@ -138,5 +149,13 @@ i{
 .top{
   font-size:30rpx;
   color: #000;
+}
+
+.button_share{
+  width: 80%;
+  margin-top: 5vh;
+  height: 45px;
+  color: #fff;
+  background: #62b900;
 }
 </style>

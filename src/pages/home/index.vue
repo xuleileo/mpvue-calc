@@ -16,8 +16,10 @@
       <div class="item bonus" @click="btn_bonus">
         <i class="item_left" >年终奖计算</i>
       </div>
+      
       <div class="item bonus" @click="btn_info">
         <i class="item_left" >个税介绍</i>
+        <i class="item_right"><img class="array" src="../../../static/assets/arrayRight.png" alt=""></i>
       </div>
       <ad unit-id="adunit-f5c8584430a94aa2"></ad>
     </div>
@@ -135,5 +137,15 @@ ad{
   height: 45px;
   color: #fff;
   background: #62b900;
+}
+.item_right{
+  float: right;
+  margin-right: 3vw;
+  margin-top: 13px;
+  font-size: 16px;
+}
+.item_right .array{
+  width: 30rpx;
+  height: 40rpx;
 }
 </style>
