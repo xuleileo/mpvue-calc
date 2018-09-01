@@ -19,6 +19,8 @@ export default {
       'pages/home_info_fenlei/main',
       'pages/home_info_shuilvbiao/main',
       'pages/home_info_shuilvbiao_gongzi/main',
+      'pages/home_info_shuilvbiao_geti/main',
+      'pages/home_info_shuilvbiao_qiye/main',
       'pages/home_bonus/main',
       'pages/home_result/main'],
     window: {

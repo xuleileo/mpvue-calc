@@ -6,7 +6,14 @@
         <i class="item_left">工资、薪金所得</i>
         <i class="item_right"><img class="array" src="../../../static/assets/arrayRight.png" alt=""></i>
       </div>
-      
+      <div class="item top" @click="btn_geti">
+        <i class="item_left">个体工商户的生产、经营所得</i>
+        <i class="item_right"><img class="array" src="../../../static/assets/arrayRight.png" alt=""></i>
+      </div>
+      <div class="item top" @click="btn_qiye">
+        <i class="item_left">对企事业单位的承包经营、承租经营所得</i>
+        <i class="item_right"><img class="array" src="../../../static/assets/arrayRight.png" alt=""></i>
+      </div>
       <button class="button_share" @click="btn_share" open-type="share">考考好友</button>
     </div>
     
@@ -25,6 +32,14 @@ export default {
     }
   },
   methods: {
+    btn_qiye(){
+      const url = '../home_info_shuilvbiao_qiye/main';
+      wx.navigateTo({ url })
+    },
+    btn_geti(){
+      const url = '../home_info_shuilvbiao_geti/main';
+      wx.navigateTo({ url })
+    },
     btn_gongzi(){
       const url = '../home_info_shuilvbiao_gongzi/main';
       wx.navigateTo({ url })
